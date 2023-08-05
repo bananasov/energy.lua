@@ -1,7 +1,7 @@
 local energy = {}
 
 local old_path = package.path
-package.path = package.path .. "/energy_rewrite/?;/energy_rewrite/?.lua;/energy_rewrite/?/init.lua;"
+package.path = package.path .. "/energy/?;/energy/?.lua;/energy/?/init.lua;"
 
 energy.util = require("util")
 
