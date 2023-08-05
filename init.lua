@@ -11,7 +11,8 @@ energy.powah = {
 }
 
 energy.tech_reborn = {
-    generator = require("tech_reborn.generator")
+    generator = require("tech_reborn.generator"),
+    banks = require("tech_reborn.banks")
 }
 
 package.path = old_path
