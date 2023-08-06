@@ -3,7 +3,7 @@ local util = {
 }
 
 ---@param peripheral_type string|table The peripheral type
----@return table peripheral The peripheral gotten
+---@return table peripheral The peripheral(s) gotten
 function util.get_peripherals_from_type(peripheral_type)
     local peripherals = {}
 

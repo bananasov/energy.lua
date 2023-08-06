@@ -27,4 +27,19 @@ function furnator:get_total_capacity()
     return capacity
 end
 
+---@param name string The peripheral name
+---@return number
+function furnator.get_stored(name)
+    local wrap = peripheral.wrap(name)
+    return wrap.getEnergy()
+end
+
+---@param name string The peripheral name
+---@return number
+function furnator.get_capacity(name)
+    local wrap = peripheral.wrap(name)
+    return wrap.getEnergyCapacity()
+end
+
+
 return furnator

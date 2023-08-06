@@ -27,4 +27,18 @@ function thermo_generator:get_total_capacity()
     return capacity
 end
 
+---@param name string The peripheral name
+---@return number
+function thermo_generator.get_stored(name)
+    local wrap = peripheral.wrap(name)
+    return wrap.getEnergy()
+end
+
+---@param name string The peripheral name
+---@return number
+function thermo_generator.get_capacity(name)
+    local wrap = peripheral.wrap(name)
+    return wrap.getEnergyCapacity()
+end
+
 return thermo_generator

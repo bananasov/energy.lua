@@ -27,4 +27,18 @@ function energy_cell:get_total_capacity()
     return capacity
 end
 
+---@param name string The peripheral name
+---@return number
+function energy_cell.get_stored(name)
+    local wrap = peripheral.wrap(name)
+    return wrap.getEnergy()
+end
+
+---@param name string The peripheral name
+---@return number
+function energy_cell.get_capacity(name)
+    local wrap = peripheral.wrap(name)
+    return wrap.getEnergyCapacity()
+end
+
 return energy_cell

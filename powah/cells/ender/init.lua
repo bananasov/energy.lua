@@ -27,4 +27,71 @@ function ender_cell:get_total_capacity()
     return capacity
 end
 
+---@return { [string]: number }
+function ender_cell:get_total_energy_transfer()
+    local peripherals = util.get_peripherals_from_type(self.types)
+    ---@type { [string]: number }
+    local total_transfer = {}
+
+    for _, periph in pairs(peripherals) do
+        local wrap = peripheral.wrap(periph)
+        total_transfer[periph] = wrap.getEnergyTransfer()
+    end
+
+    return total_transfer
+end
+
+---@param name string The peripheral name
+---@return number
+function ender_cell.get_stored(name)
+    local wrap = peripheral.wrap(name)
+    return wrap.getEnergy()
+end
+
+---@param name string The peripheral name
+---@return number
+function ender_cell.get_capacity(name)
+    local wrap = peripheral.wrap(name)
+    return wrap.getEnergyCapacity()
+end
+
+--#region Ender Cell specific functions
+
+---@return { [string]: number }
+function ender_cell:get_channels()
+    local peripherals = util.get_peripherals_from_type(self.types)
+    ---@type { [string]: number }
+    local channels = {}
+
+    for _, periph in pairs(peripherals) do
+        local wrap = peripheral.wrap(periph)
+        channels[periph] = wrap.getChannel()
+    end
+
+    return channels
+end
+
+---@return { [string]: number }
+function ender_cell:get_max_channels()
+    local peripherals = util.get_peripherals_from_type(self.types)
+    ---@type { [string]: number }
+    local max_channels = {}
+
+    for _, periph in pairs(peripherals) do
+        local wrap = peripheral.wrap(periph)
+        max_channels[periph] = wrap.getMaxChannel()
+    end
+
+    return max_channels
+end
+
+---@param name string
+---@param channel number
+function ender_cell.set_channel(name, channel)
+    local wrap = peripheral.wrap(name)
+    wrap.setChannel(channel)
+end
+
+--#endregion
+
 return ender_cell
