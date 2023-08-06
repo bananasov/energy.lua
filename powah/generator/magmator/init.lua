@@ -67,7 +67,7 @@ function magmator:get_energy_generation_all()
 end
 
 ---@return { [string]: number }
-function reactor:get_energy_stored_all()
+function magmator:get_energy_stored_all()
     local peripherals = util.get_peripherals_from_type(self.types)
     local stored = {}
 
