@@ -54,6 +54,18 @@ function solar_panel:get_total_energy_generation()
     return total_generation
 end
 
+function solar_panel:get_energy_generation_all()
+    local peripherals = util.get_peripherals_from_type(self.types)
+    local generation = {}
+
+    for _, periph in pairs(peripherals) do
+        local wrap = peripheral.wrap(periph)
+        generation[periph] = wrap.getEnergyGeneration()
+    end
+
+    return generation
+end
+
 ---@param name string The peripheral name
 ---@return number
 function solar_panel.get_stored(name)
