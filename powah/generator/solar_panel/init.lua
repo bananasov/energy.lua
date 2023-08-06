@@ -73,7 +73,7 @@ function solar_panel:get_energy_stored_all()
 
     for _, periph in pairs(peripherals) do
         local wrap = peripheral.wrap(periph)
-        stored[periph] = wrap.getEnergyStored()
+        stored[periph] = wrap.getEnergy()
     end
 
     return stored
