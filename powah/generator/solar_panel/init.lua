@@ -66,6 +66,32 @@ function solar_panel:get_energy_generation_all()
     return generation
 end
 
+---@return { [string]: number }
+function solar_panel:get_energy_stored_all()
+    local peripherals = util.get_peripherals_from_type(self.types)
+    local stored = {}
+
+    for _, periph in pairs(peripherals) do
+        local wrap = peripheral.wrap(periph)
+        stored[periph] = wrap.getEnergyStored()
+    end
+
+    return stored
+end
+
+---@return { [string]: number }
+function solar_panel:get_energy_capacity_all()
+    local peripherals = util.get_peripherals_from_type(self.types)
+    local stored = {}
+
+    for _, periph in pairs(peripherals) do
+        local wrap = peripheral.wrap(periph)
+        stored[periph] = wrap.getEnergyCapacity()
+    end
+
+    return stored
+end
+
 ---@param name string The peripheral name
 ---@return number
 function solar_panel.get_stored(name)
