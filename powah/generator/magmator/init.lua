@@ -41,15 +41,14 @@ function magmator:get_total_energy_transfer()
     return total_transfer
 end
 
----@return { [string]: number }
+---@return number
 function magmator:get_total_energy_generation()
     local peripherals = util.get_peripherals_from_type(self.types)
-    ---@type { [string]: number }
-    local total_generation = {}
+    local total_generation = 0
 
     for _, periph in pairs(peripherals) do
         local wrap = peripheral.wrap(periph)
-        total_generation[periph] = wrap.getEnergyGeneration()
+        total_generation = total_generation + wrap.getEnergyGeneration()
     end
 
     return total_generation
