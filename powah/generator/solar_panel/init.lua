@@ -27,6 +27,34 @@ function solar_panel:get_total_capacity()
     return capacity
 end
 
+---@return { [string]: number }
+function solar_panel:get_total_energy_transfer()
+    local peripherals = util.get_peripherals_from_type(self.types)
+    ---@type { [string]: number }
+    local total_transfer = {}
+
+    for _, periph in pairs(peripherals) do
+        local wrap = peripheral.wrap(periph)
+        total_transfer[periph] = wrap.getEnergyTransfer()
+    end
+
+    return total_transfer
+end
+
+---@return { [string]: number }
+function solar_panel:get_total_energy_generation()
+    local peripherals = util.get_peripherals_from_type(self.types)
+    ---@type { [string]: number }
+    local total_generation = {}
+
+    for _, periph in pairs(peripherals) do
+        local wrap = peripheral.wrap(periph)
+        total_generation[periph] = wrap.getEnergyGeneration()
+    end
+
+    return total_generation
+end
+
 ---@param name string The peripheral name
 ---@return number
 function solar_panel.get_stored(name)
