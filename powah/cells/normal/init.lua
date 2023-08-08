@@ -27,6 +27,13 @@ function energy_cell:get_total_capacity()
     return capacity
 end
 
+---@return string[]
+function energy_cell:get_peripherals()
+    local peripherals = util.get_peripherals_from_type(self.types)
+
+    return peripherals
+end
+
 ---@param name string The peripheral name
 ---@return number
 function energy_cell.get_stored(name)
