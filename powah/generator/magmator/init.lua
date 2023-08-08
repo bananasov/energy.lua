@@ -92,6 +92,13 @@ function magmator:get_energy_capacity_all()
     return stored
 end
 
+---@return string[]
+function magmator:get_peripherals()
+    local peripherals = util.get_peripherals_from_type(self.types)
+
+    return peripherals
+end
+
 ---@param name string The peripheral name
 ---@return number
 function magmator.get_stored(name)

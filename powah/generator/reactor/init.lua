@@ -107,6 +107,13 @@ function reactor:get_energy_capacity_all()
     return stored
 end
 
+---@return string[]
+function reactor:get_peripherals()
+    local peripherals = util.get_peripherals_from_type(self.types)
+
+    return peripherals
+end
+
 ---@param name string The peripheral name
 ---@return number
 function reactor.get_stored(name)

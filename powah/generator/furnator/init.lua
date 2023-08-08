@@ -92,6 +92,13 @@ function furnator:get_energy_capacity_all()
     return stored
 end
 
+---@return string[]
+function furnator:get_peripherals()
+    local peripherals = util.get_peripherals_from_type(self.types)
+
+    return peripherals
+end
+
 ---@param name string The peripheral name
 ---@return number
 function furnator.get_stored(name)
