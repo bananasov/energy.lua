@@ -131,7 +131,7 @@ end
 
 ---@param name string
 ---@return ReactorInspect
-function reactor:inspect(name)
+function reactor.inspect(name)
     local wrap = peripheral.wrap(name)
     return wrap.inspect()
 end
