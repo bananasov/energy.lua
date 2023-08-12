@@ -11,14 +11,14 @@ function util.get_peripherals_from_type(peripheral_type)
         for _, v in pairs(peripheral_type) do
             for i, periph in pairs(peripheral.getNames()) do
                 if periph:find(v) then
-                    peripherals[i] = periph
+                    peripherals[#peripherals+1] = periph
                 end
             end
         end
     else
         for i, v in pairs(peripheral.getNames()) do
             if v:find(peripheral_type) then
-                peripherals[i] = v
+                peripherals[#peripherals+1] = v
             end
         end
     end
