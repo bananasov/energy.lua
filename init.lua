@@ -34,6 +34,12 @@ function energy.get_capacity(name)
 	return wrap.getEnergyCapacity()
 end
 
+---@param name string
+function energy.powah.get_machine_type(name)
+	local machine, machine_type, id = string.match(name, "^powah:(%a)_(%a)_%d+")
+	return machine, machine_type, id
+end
+
 package.path = old_path
 
 return energy
