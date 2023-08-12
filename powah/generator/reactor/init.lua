@@ -2,6 +2,7 @@ local util = require("util")
 
 ---@class ReactorInspect
 ---@field autoMode boolean
+---@field currentCarbon number
 ---@field maxCarbon number
 ---@field currentRedstone number
 ---@field maxRedstone number
