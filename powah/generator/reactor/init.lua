@@ -114,20 +114,6 @@ function reactor:get_peripherals()
     return peripherals
 end
 
----@param name string The peripheral name
----@return number
-function reactor.get_stored(name)
-    local wrap = peripheral.wrap(name)
-    return wrap.getEnergy()
-end
-
----@param name string The peripheral name
----@return number
-function reactor.get_capacity(name)
-    local wrap = peripheral.wrap(name)
-    return wrap.getEnergyCapacity()
-end
-
 ---@return { [string]: ReactorInspect }
 function reactor:inspect_all()
     local peripherals = util.get_peripherals_from_type(self.types)

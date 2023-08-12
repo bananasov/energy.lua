@@ -48,20 +48,6 @@ function ender_cell:get_peripherals()
     return peripherals
 end
 
----@param name string The peripheral name
----@return number
-function ender_cell.get_stored(name)
-    local wrap = peripheral.wrap(name)
-    return wrap.getEnergy()
-end
-
----@param name string The peripheral name
----@return number
-function ender_cell.get_capacity(name)
-    local wrap = peripheral.wrap(name)
-    return wrap.getEnergyCapacity()
-end
-
 --#region Ender Cell specific functions
 
 ---@return { [string]: number }

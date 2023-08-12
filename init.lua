@@ -15,6 +15,20 @@ energy.tech_reborn = {
     banks = require("tech_reborn.banks")
 }
 
+---@param name string The peripheral name
+---@return number
+function energy.get_stored(name)
+    local wrap = peripheral.wrap(name)
+    return wrap.getEnergy()
+end
+
+---@param name string The peripheral name
+---@return number
+function energy.get_capacity(name)
+    local wrap = peripheral.wrap(name)
+    return wrap.getEnergyCapacity()
+end
+
 package.path = old_path
 
 return energy

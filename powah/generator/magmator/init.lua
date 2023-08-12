@@ -99,18 +99,4 @@ function magmator:get_peripherals()
     return peripherals
 end
 
----@param name string The peripheral name
----@return number
-function magmator.get_stored(name)
-    local wrap = peripheral.wrap(name)
-    return wrap.getEnergy()
-end
-
----@param name string The peripheral name
----@return number
-function magmator.get_capacity(name)
-    local wrap = peripheral.wrap(name)
-    return wrap.getEnergyCapacity()
-end
-
 return magmator
