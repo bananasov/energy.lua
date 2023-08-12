@@ -129,4 +129,11 @@ function reactor:inspect_all()
     return out
 end
 
+---@param name string
+---@return ReactorInspect
+function reactor:inspect(name)
+    local wrap = peripheral.wrap(name)
+    return wrap.inspect()
+end
+
 return reactor
