@@ -37,7 +37,7 @@ end
 ---@param name string
 function energy.powah.get_machine_type(name)
 	local machine, machine_type, id = string.match(name, "^powah:(.-)_(.-)_(.+)$")
-	return machine, machine_type, id
+	return machine, machine_type, tonumber(id)
 end
 
 package.path = old_path
