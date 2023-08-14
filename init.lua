@@ -35,6 +35,9 @@ function energy.get_capacity(name)
 end
 
 ---@param name string
+---@return string machine The machine name
+---@return string machine_type The machine type
+---@return number id The machine ID
 function energy.powah.get_machine_type(name)
 	local machine, machine_type, id = string.match(name, "^powah:(.-)_(.-)_(.+)$")
 	return machine, machine_type, tonumber(id)
