@@ -34,6 +34,13 @@ function energy.get_capacity(name)
 	return wrap.getEnergyCapacity()
 end
 
+---@param name string The peripheral name
+---@return number
+function energy.get_generation(name)
+	local wrap = peripheral.wrap(name)
+	return wrap.getEnergyGeneration()
+end
+
 ---@param name string
 ---@return string machine The machine name
 ---@return string machine_type The machine type
