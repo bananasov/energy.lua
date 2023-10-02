@@ -2,13 +2,7 @@ local util = require("util")
 
 local magmator = {
     types = {
-        "powah:magmator_starter",
-        "powah:magmator_basic",
-        "powah:magmator_hardened",
-        "powah:magmator_blazing",
-        "powah:magmator_niotic",
-        "powah:magmator_spirited",
-        "powah:magmator_nitro",
+        "magmator"
     }
 }
 
@@ -86,7 +80,7 @@ function magmator:get_energy_capacity_all()
 
     for _, periph in pairs(peripherals) do
         local wrap = peripheral.wrap(periph)
-        stored[periph] = wrap.getEnergyCapacity()
+        stored[periph] = wrap.getMaxEnergy()
     end
 
     return stored

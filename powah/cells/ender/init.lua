@@ -2,13 +2,7 @@ local util = require("util")
 
 local ender_cell = {
     types = {
-        "powah:ender_cell_starter",
-        "powah:ender_cell_basic",
-        "powah:ender_cell_hardened",
-        "powah:ender_cell_blazing",
-        "powah:ender_cell_niotic",
-        "powah:ender_cell_spirited",
-        "powah:ender_cell_nitro",
+        "enderCell"
     }
 }
 

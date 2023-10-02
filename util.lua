@@ -82,7 +82,7 @@ function util.get_total_capacity_from_type(peripheral_type)
 
             for i, periph in pairs(peripherals) do
                 local wrap = peripheral.wrap(periph)
-                capacity = capacity + wrap.getEnergyCapacity()
+                capacity = capacity + wrap.getMaxEnergy()
             end
         end
     else
@@ -90,7 +90,7 @@ function util.get_total_capacity_from_type(peripheral_type)
 
         for _, periph in pairs(peripherals) do
             local wrap = peripheral.wrap(periph)
-            capacity = capacity + wrap.getEnergyCapacity()
+            capacity = capacity + wrap.getMaxEnergy()
         end
     end
 

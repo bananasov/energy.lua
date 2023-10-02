@@ -2,13 +2,7 @@ local util = require("util")
 
 local solar_panel = {
     types = {
-        "powah:solar_panel_starter",
-        "powah:solar_panel_basic",
-        "powah:solar_panel_hardened",
-        "powah:solar_panel_blazing",
-        "powah:solar_panel_niotic",
-        "powah:solar_panel_spirited",
-        "powah:solar_panel_nitro",
+        "solarPanel"
     }
 }
 
@@ -86,7 +80,7 @@ function solar_panel:get_energy_capacity_all()
 
     for _, periph in pairs(peripherals) do
         local wrap = peripheral.wrap(periph)
-        stored[periph] = wrap.getEnergyCapacity()
+        stored[periph] = wrap.getMaxEnergy()
     end
 
     return stored

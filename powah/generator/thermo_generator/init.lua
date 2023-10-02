@@ -2,13 +2,7 @@ local util = require("util")
 
 local thermo_generator = {
     types = {
-        "powah:thermo_generator_starter",
-        "powah:thermo_generator_basic",
-        "powah:thermo_generator_hardened",
-        "powah:thermo_generator_blazing",
-        "powah:thermo_generator_niotic",
-        "powah:thermo_generator_spirited",
-        "powah:thermo_generator_nitro",
+        "thermo"
     }
 }
 
@@ -86,7 +80,7 @@ function thermo_generator:get_energy_capacity_all()
 
     for _, periph in pairs(peripherals) do
         local wrap = peripheral.wrap(periph)
-        stored[periph] = wrap.getEnergyCapacity()
+        stored[periph] = wrap.getMaxEnergy()
     end
 
     return stored

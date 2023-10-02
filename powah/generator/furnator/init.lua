@@ -2,13 +2,7 @@ local util = require("util")
 
 local furnator = {
     types = {
-        "powah:furnator_starter",
-        "powah:furnator_basic",
-        "powah:furnator_hardened",
-        "powah:furnator_blazing",
-        "powah:furnator_niotic",
-        "powah:furnator_spirited",
-        "powah:furnator_nitro",
+        "furnator"
     }
 }
 
@@ -86,7 +80,7 @@ function furnator:get_energy_capacity_all()
 
     for _, periph in pairs(peripherals) do
         local wrap = peripheral.wrap(periph)
-        stored[periph] = wrap.getEnergyCapacity()
+        stored[periph] = wrap.getMaxEnergy()
     end
 
     return stored

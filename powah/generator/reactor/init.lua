@@ -16,13 +16,7 @@ local util = require("util")
 
 local reactor = {
     types = {
-        "powah:reactor_starter",
-        "powah:reactor_basic",
-        "powah:reactor_hardened",
-        "powah:reactor_blazing",
-        "powah:reactor_niotic",
-        "powah:reactor_spirited",
-        "powah:reactor_nitro",
+        "uraniniteReactor"
     }
 }
 
@@ -101,7 +95,7 @@ function reactor:get_energy_capacity_all()
 
     for _, periph in pairs(peripherals) do
         local wrap = peripheral.wrap(periph)
-        stored[periph] = wrap.getEnergyCapacity()
+        stored[periph] = wrap.getMaxEnergy()
     end
 
     return stored

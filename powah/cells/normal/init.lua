@@ -2,13 +2,7 @@ local util = require("util")
 
 local energy_cell = {
     types = {
-        "powah:energy_cell_starter",
-        "powah:energy_cell_basic",
-        "powah:energy_cell_hardened",
-        "powah:energy_cell_blazing",
-        "powah:energy_cell_niotic",
-        "powah:energy_cell_spirited",
-        "powah:energy_cell_nitro",
+        "energyCell"
     }
 }
 
