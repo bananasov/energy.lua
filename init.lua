@@ -10,11 +10,6 @@ energy.powah = {
     cells = require("powah.cells")
 }
 
-energy.tech_reborn = {
-    generator = require("tech_reborn.generator"),
-    banks = require("tech_reborn.banks")
-}
-
 ---@param name string The peripheral name
 ---@return number
 function energy.get_stored(name)
@@ -26,7 +21,7 @@ end
 ---@return number
 function energy.get_capacity(name)
     local wrap = peripheral.wrap(name)
-    return wrap.getEnergyCapacity()
+    return wrap.getMaxEnergy()
 end
 
 package.path = old_path
